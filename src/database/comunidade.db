@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS DIZIMISTAS_TOTAIS (
+    dizimista_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dizimista_nome VARCHAR(100),
+    dizimista_bairro VARCHAR(100),
+    dizimista_rua VARCHAR(100),
+    dizimista_numero_casa INTEGER,
+    dizimista_telefone VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS DIZIMISTAS_DO_MES (
+    dizimista_do_mes_id INTEGER,
+    FOREIGN KEY (dizimista_do_mes_id)
+        REFERENCES DIZIMISTAS_TOTAIS(dizimista_id)
+);
