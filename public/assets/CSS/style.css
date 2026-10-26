@@ -1,4 +1,21 @@
+body {
+  background-color: rgb(208, 207, 207);
+}
+
 * {
   padding: 0%;
   margin: 0%;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  display: inline-block;
+  transition: 500ms;
+}
+
+a:hover {
+  transform: translateY(-10px);
+  color: rgb(220, 205, 205);
 }

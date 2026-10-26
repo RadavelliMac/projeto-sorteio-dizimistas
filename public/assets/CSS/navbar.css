@@ -1,0 +1,20 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 80px;
+  width: 100vw;
+
+  background-color: rgb(101, 167, 189);
+}
+
+nav a {
+  display: inline-flex;
+  padding: 20px;
+  color: white;
+}
+
+nav .churchImg {
+  margin-left: 20px;
+}

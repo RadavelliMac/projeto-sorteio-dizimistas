@@ -6,10 +6,22 @@
     <title>PÁGINA INICIAL</title>
 
     <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/home.css" />
   </head>
   <body>
+
     <div class="home">
-      <h1>HOME</h1>
+
+      <%- include('common/navbar') %>
+
+      <div class="actions">
+        <a href="/cadastro-geral">Cadastro Geral</a>
+        <a href="/cadastro-mensal">Cadastro do Mês</a>
+        <a href="/sorteio-dizimista">Sorteio Dizimista</a>
+        <a href="/sorteio-geral">Sorteio Geral</a>
+      </div>
+
     </div>
+
   </body>
 </html>

@@ -1,0 +1,13 @@
+.actions {
+  margin-top: 200px;
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.actions a {
+  color: white;
+  padding: 40px;
+  background-color: rgb(140, 181, 194);
+  border-radius: 20px;
+}
