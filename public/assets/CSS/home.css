@@ -1,3 +1,14 @@
+.homeInfos {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.welcome span {
+  display: block;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
 .actions {
   margin-top: 200px;
   display: flex;
@@ -8,6 +19,12 @@
 .actions a {
   color: white;
   padding: 40px;
-  background-color: rgb(140, 181, 194);
+  background-color: rgb(147, 179, 189);
   border-radius: 20px;
+  border: 2px solid rgb(69, 113, 155);
+}
+
+.actions a:hover {
+  border: 2px solid rgb(8, 38, 67);
+  background-color: rgb(73, 136, 158);
 }

@@ -1,0 +1,70 @@
+.register h1 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.register h2 {
+  margin-bottom: 40px;
+}
+
+.register h2 span {
+  color: rgb(147, 179, 189);
+}
+
+.register {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputs {
+  display: grid;
+  place-self: center;
+}
+
+.inputs input {
+  display: block;
+  margin-bottom: 40px;
+  width: 250px;
+  height: 25px;
+  border-radius: 5px;
+  border: 2px solid rgb(118, 162, 177);
+}
+
+input::placeholder {
+  padding: 5px;
+}
+
+.submit {
+  display: grid;
+  place-self: center;
+  width: 150px !important;
+  cursor: pointer;
+  transition: 500ms;
+  background-color: rgb(147, 179, 189);
+  border: 2px solid rgb(69, 113, 155) !important;
+  color: white;
+  font-size: 20px;
+}
+
+.submit:hover {
+  transform: translateY(-8px);
+  border: 2px solid rgb(8, 38, 67);
+  background-color: rgb(73, 136, 158);
+}
+
+.visualizerInfos a {
+  color: white;
+  padding: 40px;
+  background-color: rgb(147, 179, 189);
+  border-radius: 20px;
+  border: 2px solid rgb(69, 113, 155);
+
+  margin-top: 40px;
+}
+
+.visualizerInfos a:hover {
+  border: 2px solid rgb(8, 38, 67);
+  background-color: rgb(73, 136, 158);
+}

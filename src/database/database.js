@@ -1,16 +1,37 @@
-const Database = require("better-sqlite3");
-const path = require("node:path");
-const fs = require("node:fs");
+const sqlite3 = require("sqlite3");
+const { open } = require("sqlite");
 
-const pastaDados = path.join(__dirname, "../../data");
+async function openDb() {
+  return open({
+    filename: "./database.sqlite",
+    driver: sqlite3.Database,
+  });
+}
 
-fs.mkdirSync(pastaDados, { recursive: true });
+async function setupDatabase() {
+  const db = await openDb();
 
-const caminhoBanco = path.join(pastaDados, "comunidade.db");
+  await db.exec(`
+    
+    CREATE TABLE IF NOT EXISTS DIZIMISTAS_TOTAIS (
+        dizimista_id INTEGER PRIMARY KEY,
+        dizimista_nome VARCHAR(100),
+        dizimista_sobrenome VARCHAR(100),
+        dizimista_bairro VARCHAR(100),
+        dizimista_rua VARCHAR(100),
+        dizimista_numero_casa INTEGER,
+        dizimista_telefone VARCHAR(100)
+    );
 
-const db = new Database(caminhoBanco);
+    CREATE TABLE IF NOT EXISTS DIZIMISTAS_DO_MES (
+        dizimista_do_mes_id INTEGER,
+        FOREIGN KEY (dizimista_do_mes_id)
+            REFERENCES DIZIMISTAS_TOTAIS(dizimista_id)
+    )
 
-// Habilita a validação das chaves estrangeiras
-db.pragma("foreign_keys = ON");
+  `);
 
-module.exports = db;
+  return db;
+}
+
+module.exports = { openDb, setupDatabase };

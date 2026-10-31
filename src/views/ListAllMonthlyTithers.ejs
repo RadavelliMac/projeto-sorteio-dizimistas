@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/visualizer.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Visualizar Dizimistas</title>
+</head>
+<body>
+    
+    <div class="visualizer">
+
+        <%- include('common/navbar') %>
+
+        <div class="visualizerArea">
+
+                <div class="visualizerInfos">
+                    <h2>Área para visualizar, editar ou excluir dizimistas cadastrados</h2>
+                </div>
+
+                <% if (dizimistas.length > 0) { %>
+
+                <table border="1" align="center">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Sobrenome</th>
+                            <th>Telefone</th>
+                            <th>Bairro</th>
+                            <th>Rua</th>
+                            <th>Número</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                            <% dizimistas.forEach(dizimista => { %>
+                                <tr>
+                                    <td> <%= dizimista.dizimista_do_mes_id %> </td>
+                                    <td>
+                                        <a href="">
+                                            <img class="image" src="/assets/IMAGES/edit.svg" alt="">
+                                        </a>
+                                        <a class="delete" data-id="<%= dizimista.dizimista_id %>" href="">
+                                            <img data-id="<%= dizimista.dizimista_id %>" class="image delete" src="/assets/IMAGES/delete.svg" alt="">
+                                        </a>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                            
+                        </tbody>
+                    </table>
+
+                    <% } else { %>
+
+                        <div class="listAllRegisterWarning">
+                            <h1>Nenhum dizimista cadastrado até o momento</h1>
+    
+                            <h2 class="registerNewTitherAdvice">Para cadastrar dizimistas, clique no botão abaixo:</h2>
+                            <a href="/cadastro-geral">Cadastrar Dizimistas</a>
+                        </div>
+
+                    <% } %>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('delete')) {
+                let id = e.target.getAttribute('data-id')
+                let confirmation = window.confirm('Tem certeza que deseja excluir?')
+                if (confirmation) window.location.href = `/cadastro-geral/editar/excluir/${id}`
+                else alert('Exclusão cancelada')
+            }
+        });
+            
+    </script>
+
+</body>
+</html>

@@ -5,7 +5,9 @@ const dotenv = require("dotenv").config({
   path: path.resolve(__dirname, ".env"),
 });
 
-const port = process.env.PORT;
+const { setupDatabase } = require("./src/database/database");
+
+const PORT = process.env.PORT;
 
 const app = express();
 
@@ -19,6 +21,8 @@ app.use(express.static(path.resolve(__dirname, "public")));
 
 app.use(routes);
 
-app.listen(port, () => {
-  console.log(`servidor rodando em http://localhost:${port}`);
+setupDatabase().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
+  });
 });

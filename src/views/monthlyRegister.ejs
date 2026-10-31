@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/monthlyRegister.css">
 </head>
 <body>
     <div class="cadastro">
@@ -11,7 +13,27 @@
         <%- include('common/navbar') %>
 
         <div class="monthlyRegister">
-            <h1>REGISTRO MENSAL</h1>
+
+            <div class="monthlyRegisterInfos">
+                <h1>REGISTRO MENSAL</h1>
+                <h2>Coloque no campo abaixo apenas o número do dizimista que participará do sorteio desse mês</h2>
+            </div>
+
+            <form action="/cadastro-mensal" method="post"> 
+                <div class="inputs">
+                    <label for="tither">Número do dizimista (ID único): </label>
+                    <input type="number" name="tither" id="titherNumber">
+                </div>
+                <div class="inputs">
+                    <input class="submit" type="submit" value="Cadastrar">
+                </div>
+            </form>
+        </div>
+
+        <div class="VisualizeMonthlyPrizeDrawTithers">
+            <h2>Para visualizar os dizimistas que participarão do sorteio esse mês, clique no botão abaixo</h2>
+
+            <a class="visualize" href="/cadastro-mensal/editar">Visualizar Dizimistas</a>
         </div>
 
     </div>

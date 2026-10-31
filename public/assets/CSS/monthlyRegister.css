@@ -1,0 +1,64 @@
+.monthlyRegister {
+  display: grid;
+  place-self: center;
+}
+
+.inputs {
+  display: grid;
+  place-self: center;
+}
+
+label {
+  text-align: center;
+}
+
+input {
+  border-radius: 5px;
+}
+
+.monthlyRegisterInfos {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  text-align: center;
+  width: 50%;
+  display: grid;
+  place-self: center;
+}
+
+.monthlyRegister h1 {
+  margin-bottom: 40px;
+}
+
+#titherNumber {
+  display: block;
+  margin-bottom: 40px;
+  width: 250px;
+  height: 25px;
+  border: 2px solid rgb(118, 162, 177);
+}
+
+.submit {
+  display: grid;
+  place-self: center;
+  width: 150px !important;
+  cursor: pointer;
+  transition: 500ms;
+  background-color: rgb(147, 179, 189);
+  border: 2px solid rgb(69, 113, 155) !important;
+  color: white;
+  font-size: 20px;
+}
+
+.submit:hover {
+  transform: translateY(-8px);
+  border: 2px solid rgb(8, 38, 67);
+  background-color: rgb(73, 136, 158);
+}
+
+.VisualizeMonthlyPrizeDrawTithers {
+  margin-top: 80px;
+  text-align: center;
+  width: 50%;
+  display: grid;
+  place-self: center;
+}

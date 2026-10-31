@@ -4,15 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CADASTRO</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/register.css">
 </head>
 <body>
     
-    <div class="cadastro">
+    <div class="registerTither">
 
         <%- include('common/navbar') %>
 
         <div class="register">
-            <h1>CADASTRO</h1>
+
+            <div class="form">
+
+                <div class="formInfos">
+                    <h1>CADASTRO</h1>
+                    <h2>Preencha os campos abaixo corretamente e clique em "<span>Cadastrar</span>"</h2>
+                </div>
+
+                <form action="" method="post">
+
+                    <div class="inputs">
+                        <label for="name">Nome:</label>
+                        <input type="text" name="name" placeholder="Ex: José" required>
+                    </div>
+
+                    <div class="inputs">
+                        <label for="name">Sobrenome:</label>
+                        <input type="text" name="surname" placeholder="Ex: José" required>
+                    </div>
+
+                    <div class="inputs">
+                        <label for="neighborhood">Bairro:</label>
+                        <input type="text" name="neighborhood" placeholder="Ex: Aventureiro">
+                    </div>
+
+                    <div class="inputs">
+                        <label for="street">Rua:</label>
+                        <input type="text" name="street" placeholder="Ex: Adolfo Morbis" required>
+                    </div>
+
+                    <div class="inputs">
+                        <label for="number">Número:</label>
+                        <input type="number" min="0" name="housenumber" placeholder="400" required>
+                    </div>
+
+                    <div class="inputs">
+                        <label for="number">Telefone:</label>
+                        <input type="text" name="Telefone" placeholder="4002-8922" required>
+                    </div>
+
+                    <div class="inputs">
+                        <input type="submit" value="Cadastrar" class="submit">
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="visualizer">
+
+                <div class="visualizerInfos">
+                    <h1>VISUALIZAR E EDITAR</h1>
+                    <h2>Para visualizar, editar ou excluir os dizimistas cadastrados, clique no botão abaixo</h2>
+                    <a href="/cadastro-geral/editar">Visualizar Dizimistas</a>
+                </div>
+
+            </div>
+
         </div>
 
     </div>

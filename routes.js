@@ -10,8 +10,14 @@ const PrizedrawGeneral = require("./src/controller/prizedrawGeneral");
 router.get("/", Home.Home);
 
 router.get("/cadastro-geral", Register.Register);
+router.post("/cadastro-geral", Register.Cadastrar);
+router.get("/cadastro-geral/editar", Register.GetAll);
+router.get("/cadastro-geral/editar/excluir/:id", Register.Delete);
 
 router.get("/cadastro-mensal", MonthlyRegister.MonthlyRegister);
+router.post("/cadastro-mensal", MonthlyRegister.Cadastrar);
+router.get("/cadastro-mensal/editar", MonthlyRegister.GetAll);
+router.get("/cadastro-mensal/editar/excluir/:id", MonthlyRegister.Delete);
 
 router.get("/sorteio-dizimista", PrizedrawTither.PrizedrawTither);
 
